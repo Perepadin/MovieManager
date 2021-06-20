@@ -4,11 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.MovieCatalog;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class MovieManagerTest {
-
-    MovieManager manager = new MovieManager(7);
+public class MovieManager10Test {
+    MovieManager manager = new MovieManager();
 
     private final MovieCatalog first = new MovieCatalog(
             1, 1, "Movie1", "action");
@@ -53,15 +52,18 @@ class MovieManagerTest {
 
     @Test
     public void shouldSave() {
-        manager.addMovie(first);
+        manager.addMovie(five);
         MovieCatalog[] expected = new MovieCatalog[]{
-                first,
+                five,
                 twelve,
                 eleven,
                 ten,
                 nine,
                 eight,
-                seven
+                seven,
+                six,
+                five,
+                four
         };
         MovieCatalog[] actual = manager.getItems();
 
@@ -78,9 +80,15 @@ class MovieManagerTest {
                 nine,
                 eight,
                 seven,
-                six
+                six,
+                five,
+                four,
+                third
         };
         assertArrayEquals(expected, actual);
     }
+
+
+
 
 }
