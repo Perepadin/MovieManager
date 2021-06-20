@@ -53,9 +53,9 @@ class MovieManagerTest {
 
     @Test
     public void shouldSave() {
-        manager.addMovie(five);
+        manager.addMovie(four);
         MovieCatalog[] expected = new MovieCatalog[]{
-                five,
+                four,
                 twelve,
                 eleven,
                 ten,
